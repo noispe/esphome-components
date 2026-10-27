@@ -40,7 +40,7 @@ CONFIG_SCHEMA = cv.All(
                 # override default value of default_transition_length to 0s as mostly not supported by those lights
                 cv.Optional(CONF_DEFAULT_TRANSITION_LENGTH, default="0s"): cv.positive_time_period_milliseconds,
                 # override default value for restore mode, to always restore as it was if possible
-                cv.Optional(CONF_RESTORE_MODE, default="RESTORE_DEFAULT_OFF"): cv.enum(light.RESTORE_MODES, upper=True, space="_"),
+                cv.Optional(CONF_RESTORE_MODE, default="RESTORE_DEFAULT_OFF"): cv.enum(light.LEGACY_RESTORE_MODES, upper=True, space="_"),
             }
         ).extend(ENTITY_BASE_CONFIG_SCHEMA),
         light.RGB_LIGHT_SCHEMA.extend(
